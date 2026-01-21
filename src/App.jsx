@@ -5,11 +5,13 @@ import StudyTimer from './components/StudyTimer/StudyTimer';
 import Statistics from './components/Statistics/Statistics';
 import DailyGoals from './components/DailyGoals/DailyGoals';
 import Settings from './components/Settings/Settings';
-import { FiBook, FiClock, FiBarChart2, FiTarget, FiSettings } from 'react-icons/fi';
+import FlashcardQuiz from './components/Flashcards/FlashcardQuiz';
+import { FiBook, FiClock, FiBarChart2, FiTarget, FiSettings, FiZap } from 'react-icons/fi';
 
 const TABS = {
   DASHBOARD: 'dashboard',
   TIMER: 'timer',
+  QUIZ: 'quiz',
   STATISTICS: 'statistics',
   GOALS: 'goals',
   SETTINGS: 'settings',
@@ -17,21 +19,30 @@ const TABS = {
 
 function App() {
   const [activeTab, setActiveTab] = useState(TABS.DASHBOARD);
+  const [quizSkillId, setQuizSkillId] = useState(null);
 
   const tabs = [
     { id: TABS.DASHBOARD, label: 'Dashboard', icon: FiBook },
     { id: TABS.TIMER, label: 'Timer', icon: FiClock },
+    { id: TABS.QUIZ, label: 'Quiz', icon: FiZap },
     { id: TABS.STATISTICS, label: 'Statistics', icon: FiBarChart2 },
     { id: TABS.GOALS, label: 'Goals', icon: FiTarget },
     { id: TABS.SETTINGS, label: 'Settings', icon: FiSettings },
   ];
 
+  const handleStartQuiz = (skillId = null) => {
+    setQuizSkillId(skillId);
+    setActiveTab(TABS.QUIZ);
+  };
+
   const renderContent = () => {
     switch (activeTab) {
       case TABS.DASHBOARD:
-        return <SkillDashboard />;
+        return <SkillDashboard onStartQuiz={handleStartQuiz} />;
       case TABS.TIMER:
         return <StudyTimer />;
+      case TABS.QUIZ:
+        return <FlashcardQuiz skillId={quizSkillId} />;
       case TABS.STATISTICS:
         return <Statistics />;
       case TABS.GOALS:
@@ -39,7 +50,7 @@ function App() {
       case TABS.SETTINGS:
         return <Settings />;
       default:
-        return <SkillDashboard />;
+        return <SkillDashboard onStartQuiz={handleStartQuiz} />;
     }
   };
 
@@ -73,8 +84,8 @@ function App() {
                       key={tab.id}
                       onClick={() => setActiveTab(tab.id)}
                       className={`flex items-center gap-2 px-4 py-2 rounded-xl font-medium transition-all ${activeTab === tab.id
-                          ? 'bg-gradient-to-r from-primary-600 to-accent-600 text-white shadow-lg shadow-primary-500/30'
-                          : 'text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'
+                        ? 'bg-gradient-to-r from-primary-600 to-accent-600 text-white shadow-lg shadow-primary-500/30'
+                        : 'text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'
                         }`}
                     >
                       <Icon size={18} />
@@ -102,8 +113,8 @@ function App() {
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
                   className={`flex flex-col items-center gap-1 px-3 py-2 rounded-xl transition-all min-w-[60px] ${activeTab === tab.id
-                      ? 'text-primary-600 dark:text-primary-400'
-                      : 'text-slate-600 dark:text-slate-400'
+                    ? 'text-primary-600 dark:text-primary-400'
+                    : 'text-slate-600 dark:text-slate-400'
                     }`}
                 >
                   <Icon size={22} />

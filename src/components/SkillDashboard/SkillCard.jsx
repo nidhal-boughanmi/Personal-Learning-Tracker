@@ -4,9 +4,12 @@ import ProgressBar from '../common/ProgressBar';
 import { FiEdit2, FiTrash2, FiTrendingUp } from 'react-icons/fi';
 import { HiSparkles } from 'react-icons/hi';
 
-const SkillCard = ({ skill, onEdit }) => {
-    const { deleteSkill, increaseSkillProgress } = useApp();
+const SkillCard = ({ skill, onEdit, onViewResources, onStartQuiz }) => {
+    const { deleteSkill, increaseSkillProgress, resources } = useApp();
     const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
+
+    const skillResources = resources.filter(r => r.skillId === skill.id);
+    const resourceCount = skillResources.length;
 
     const handleDelete = () => {
         if (showDeleteConfirm) {
@@ -35,9 +38,18 @@ const SkillCard = ({ skill, onEdit }) => {
                             <HiSparkles className="text-gold-500 animate-pulse-slow" size={20} />
                         )}
                     </div>
-                    <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
-                        Target: {skill.targetProgress}%
-                    </p>
+                    <div className="flex items-center gap-2 mt-1">
+                        <p className="text-sm text-slate-500 dark:text-slate-400">
+                            Target: {skill.targetProgress}%
+                        </p>
+                        <span className="text-slate-400">•</span>
+                        <button
+                            onClick={() => onViewResources(skill)}
+                            className="text-sm text-primary-600 dark:text-primary-400 hover:underline"
+                        >
+                            {resourceCount > 0 ? `📚 ${resourceCount} resource${resourceCount !== 1 ? 's' : ''}` : '📚 Manage'}
+                        </button>
+                    </div>
                 </div>
 
                 <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -51,8 +63,8 @@ const SkillCard = ({ skill, onEdit }) => {
                     <button
                         onClick={handleDelete}
                         className={`p-2 rounded-lg transition-all ${showDeleteConfirm
-                                ? 'bg-red-500 text-white'
-                                : 'hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-400'
+                            ? 'bg-red-500 text-white'
+                            : 'hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-400'
                             }`}
                         aria-label={showDeleteConfirm ? 'Confirm delete' : 'Delete skill'}
                     >
@@ -88,10 +100,20 @@ const SkillCard = ({ skill, onEdit }) => {
             )}
 
             {isComplete && (
-                <div className="mt-4 p-3 bg-gradient-to-r from-gold-500/20 to-gold-600/20 border border-gold-500/50 rounded-lg text-center">
-                    <p className="text-sm font-bold text-gold-700 dark:text-gold-400">
-                        🎉 Skill Completed!
-                    </p>
+                <div className="mt-4 space-y-3">
+                    <div className="p-3 bg-gradient-to-r from-gold-500/20 to-gold-600/20 border border-gold-500/50 rounded-lg text-center">
+                        <p className="text-sm font-bold text-gold-700 dark:text-gold-400">
+                            🎉 Skill Completed!
+                        </p>
+                    </div>
+                    {onStartQuiz && (
+                        <button
+                            onClick={() => onStartQuiz(skill.id)}
+                            className="w-full px-4 py-2 bg-gradient-to-r from-accent-500 to-emerald-500 text-white rounded-lg hover:from-accent-600 hover:to-emerald-600 transition-all font-medium flex items-center justify-center gap-2"
+                        >
+                            ⚡ Quiz Me on {skill.name}
+                        </button>
+                    )}
                 </div>
             )}
         </div>

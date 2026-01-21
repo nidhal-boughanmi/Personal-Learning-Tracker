@@ -2,16 +2,22 @@ import React, { useState } from 'react';
 import { useApp } from '../../context/AppContext';
 import SkillCard from './SkillCard';
 import AddSkillModal from './AddSkillModal';
+import ResourcesView from '../Resources/ResourcesView';
 import { FiPlus, FiBook } from 'react-icons/fi';
 
-const SkillDashboard = () => {
+const SkillDashboard = ({ onStartQuiz }) => {
     const { skills } = useApp();
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [editingSkill, setEditingSkill] = useState(null);
+    const [viewingSkill, setViewingSkill] = useState(null);
 
     const handleEdit = (skill) => {
         setEditingSkill(skill);
         setIsModalOpen(true);
+    };
+
+    const handleViewResources = (skill) => {
+        setViewingSkill(skill);
     };
 
     const handleCloseModal = () => {
@@ -23,6 +29,11 @@ const SkillDashboard = () => {
     const averageProgress = skills.length > 0
         ? Math.round(skills.reduce((sum, s) => sum + s.currentProgress, 0) / skills.length)
         : 0;
+
+    // If viewing a skill's resources, show ResourcesView
+    if (viewingSkill) {
+        return <ResourcesView skill={viewingSkill} onClose={() => setViewingSkill(null)} />;
+    }
 
     return (
         <div className="space-y-6">
@@ -79,7 +90,13 @@ const SkillDashboard = () => {
             ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {skills.map((skill) => (
-                        <SkillCard key={skill.id} skill={skill} onEdit={handleEdit} />
+                        <SkillCard
+                            key={skill.id}
+                            skill={skill}
+                            onEdit={handleEdit}
+                            onViewResources={handleViewResources}
+                            onStartQuiz={onStartQuiz}
+                        />
                     ))}
                 </div>
             )}
