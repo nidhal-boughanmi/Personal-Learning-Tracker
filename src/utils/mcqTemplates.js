@@ -425,6 +425,826 @@ export const MCQ_TEMPLATES = {
                 { text: "Un compilateur", isCorrect: false }
             ]
         }
+    ],
+    'javascript': [
+        {
+            question: "Qu'est-ce que JavaScript?",
+            choices: [
+                { text: "Un langage de programmation pour le web", isCorrect: true },
+                { text: "Un framework CSS", isCorrect: false },
+                { text: "Une base de données", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce que 'let' et 'const'?",
+            choices: [
+                { text: "Des mots-clés pour déclarer des variables", isCorrect: true },
+                { text: "Des fonctions intégrées", isCorrect: false },
+                { text: "Des types de données", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce qu'une fonction fléchée (arrow function)?",
+            choices: [
+                { text: "Une syntaxe plus courte pour écrire des fonctions", isCorrect: true },
+                { text: "une fonction qui pointe vers le haut", isCorrect: false },
+                { text: "Un type de boucle", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce que le DOM?",
+            choices: [
+                { text: "Document Object Model - représentation de la page HTML", isCorrect: true },
+                { text: "Data Object Management", isCorrect: false },
+                { text: "Dynamic Output Method", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce qu'une Promise?",
+            choices: [
+                { text: "Un objet représentant une opération asynchrone", isCorrect: true },
+                { text: "Une fonction de callback", isCorrect: false },
+                { text: "Un type de variable", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce que async/await?",
+            choices: [
+                { text: "Une syntaxe pour gérer les opérations asynchrones", isCorrect: true },
+                { text: "Une bibliothèque externe", isCorrect: false },
+                { text: "Un framework", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce que JSON?",
+            choices: [
+                { text: "JavaScript Object Notation - format d'échange de données", isCorrect: true },
+                { text: "Un langage de programmation", isCorrect: false },
+                { text: "Une base de données", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce que l'Event Loop?",
+            choices: [
+                { text: "Le mécanisme qui gère l'exécution du code asynchrone", isCorrect: true },
+                { text: "Une boucle for améliorée", isCorrect: false },
+                { text: "Un type d'événement", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce que le spread operator (...)?",
+            choices: [
+                { text: "Un opérateur pour étendre/copier des tableaux ou objets", isCorrect: true },
+                { text: "Un opérateur mathématique", isCorrect: false },
+                { text: "Une fonction de tri", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce que le hoisting?",
+            choices: [
+                { text: "Le mécanisme qui déplace les déclarations en haut du scope", isCorrect: true },
+                { text: "Une méthode de tri", isCorrect: false },
+                { text: "Un type de boucle", isCorrect: false }
+            ]
+        }
+    ],
+    'typescript': [
+        {
+            question: "Qu'est-ce que TypeScript?",
+            choices: [
+                { text: "Un sur-ensemble de JavaScript avec typage statique", isCorrect: true },
+                { text: "Un framework frontend", isCorrect: false },
+                { text: "Une bibliothèque de test", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce qu'une interface en TypeScript?",
+            choices: [
+                { text: "Une structure définissant la forme d'un objet", isCorrect: true },
+                { text: "Une classe abstraite", isCorrect: false },
+                { text: "Un type de variable", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce qu'un type générique?",
+            choices: [
+                { text: "Un type paramétrable réutilisable", isCorrect: true },
+                { text: "Un type de donnée simple", isCorrect: false },
+                { text: "Une variable globale", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce que 'any' en TypeScript?",
+            choices: [
+                { text: "Un type qui accepte n'importe quelle valeur", isCorrect: true },
+                { text: "Une fonction intégrée", isCorrect: false },
+                { text: "Un opérateur logique", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce qu'un enum?",
+            choices: [
+                { text: "Un ensemble de constantes nommées", isCorrect: true },
+                { text: "Un type de tableau", isCorrect: false },
+                { text: "Une classe spéciale", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce que le type 'union'?",
+            choices: [
+                { text: "Un type qui peut être l'un de plusieurs types", isCorrect: true },
+                { text: "Une opération mathématique", isCorrect: false },
+                { text: "Un type de boucle", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce qu'un type assertion?",
+            choices: [
+                { text: "Une façon de dire au compilateur quel est le type", isCorrect: true },
+                { text: "Une fonction de validation", isCorrect: false },
+                { text: "Un test unitaire", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce que 'readonly' en TypeScript?",
+            choices: [
+                { text: "Un modificateur rendant une propriété en lecture seule", isCorrect: true },
+                { text: "Une fonction de lecture de fichiers", isCorrect: false },
+                { text: "Un type de variable", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce qu'un tuple?",
+            choices: [
+                { text: "Un tableau avec un nombre fixe d'éléments de types connus", isCorrect: true },
+                { text: "Une fonction", isCorrect: false },
+                { text: "Une classe", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce que le type 'never'?",
+            choices: [
+                { text: "Un type représentant une valeur qui n'arrive jamais", isCorrect: true },
+                { text: "Un type null", isCorrect: false },
+                { text: "Un type booléen", isCorrect: false }
+            ]
+        }
+    ],
+    'node.js': [
+        {
+            question: "Qu'est-ce que Node.js?",
+            choices: [
+                { text: "Un environnement d'exécution JavaScript côté serveur", isCorrect: true },
+                { text: "Un framework frontend", isCorrect: false },
+                { text: "Une base de données", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce que npm?",
+            choices: [
+                { text: "Node Package Manager - gestionnaire de paquets", isCorrect: true },
+                { text: "Un framework web", isCorrect: false },
+                { text: "Un éditeur de code", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce qu'un module en Node.js?",
+            choices: [
+                { text: "Un fichier JavaScript réutilisable", isCorrect: true },
+                { text: "Une fonction spéciale", isCorrect: false },
+                { text: "Un type de variable", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce que Express.js?",
+            choices: [
+                { text: "Un framework web minimaliste pour Node.js", isCorrect: true },
+                { text: "Un ORM", isCorrect: false },
+                { text: "Une base de données", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce que le module 'fs'?",
+            choices: [
+                { text: "File System - pour manipuler les fichiers", isCorrect: true },
+                { text: "Full Stack", isCorrect: false },
+                { text: "Fast Server", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce que middleware dans Express?",
+            choices: [
+                { text: "Des fonctions qui s'exécutent entre la requête et la réponse", isCorrect: true },
+                { text: "Une base de données intermédiaire", isCorrect: false },
+                { text: "Un serveur proxy", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce que package.json?",
+            choices: [
+                { text: "Un fichier de configuration du projet Node.js", isCorrect: true },
+                { text: "Un fichier de données JSON", isCorrect: false },
+                { text: "Un fichier de logs", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce que le module 'path'?",
+            choices: [
+                { text: "Un module pour manipuler les chemins de fichiers", isCorrect: true },
+                { text: "Un module de routage", isCorrect: false },
+                { text: "Un module de base de données", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce que nodemon?",
+            choices: [
+                { text: "Un outil qui redémarre automatiquement l'application", isCorrect: true },
+                { text: "Un framework web", isCorrect: false },
+                { text: "Une base de données", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce que process.env?",
+            choices: [
+                { text: "Un objet contenant les variables d'environnement", isCorrect: true },
+                { text: "Une fonction de processus", isCorrect: false },
+                { text: "Un type de serveur", isCorrect: false }
+            ]
+        }
+    ],
+    'angular': [
+        {
+            question: "Qu'est-ce qu'Angular?",
+            choices: [
+                { text: "Un framework TypeScript pour applications web", isCorrect: true },
+                { text: "Une bibliothèque JavaScript", isCorrect: false },
+                { text: "Un serveur backend", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce qu'un component en Angular?",
+            choices: [
+                { text: "Un élément UI avec sa logique et son template", isCorrect: true },
+                { text: "Un service", isCorrect: false },
+                { text: "Un module", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce qu'un service en Angular?",
+            choices: [
+                { text: "Une classe pour la logique métier réutilisable", isCorrect: true },
+                { text: "Un composant UI", isCorrect: false },
+                { text: "Un fichier de configuration", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce que l'injection de dépendances?",
+            choices: [
+                { text: "Un pattern pour fournir des dépendances aux composants", isCorrect: true },
+                { text: "Un type d'import", isCorrect: false },
+                { text: "Une méthode de test", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce qu'un directive?",
+            choices: [
+                { text: "Une classe qui ajoute un comportement aux éléments DOM", isCorrect: true },
+                { text: "Un composant", isCorrect: false },
+                { text: "Un service", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce que ngModel?",
+            choices: [
+                { text: "Une directive pour le two-way data binding", isCorrect: true },
+                { text: "Un service", isCorrect: false },
+                { text: "Un composant", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce qu'un pipe en Angular?",
+            choices: [
+                { text: "Une transformation de données dans les templates", isCorrect: true },
+                { text: "Un type de service", isCorrect: false },
+                { text: "Un module", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce que RxJS?",
+            choices: [
+                { text: "Une bibliothèque pour la programmation réactive", isCorrect: true },
+                { text: "Un framework CSS", isCorrect: false },
+                { text: "Un gestionnaire d'état", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce qu'un Observable?",
+            choices: [
+                { text: "Un flux de données asynchrone", isCorrect: true },
+                { text: "Une Promise", isCorrect: false },
+                { text: "Un composant", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce que le routing en Angular?",
+            choices: [
+                { text: "La navigation entre différentes vues de l'application", isCorrect: true },
+                { text: "Un service backend", isCorrect: false },
+                { text: "Un module de sécurité", isCorrect: false }
+            ]
+        }
+    ],
+    'vue.js': [
+        {
+            question: "Qu'est-ce que Vue.js?",
+            choices: [
+                { text: "Un framework JavaScript progressif pour UI", isCorrect: true },
+                { text: "Une bibliothèque backend", isCorrect: false },
+                { text: "Un gestionnaire de paquets", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce qu'un component Vue?",
+            choices: [
+                { text: "Une instance Vue réutilisable avec template, script et style", isCorrect: true },
+                { text: "Un service", isCorrect: false },
+                { text: "Une route", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce que v-model?",
+            choices: [
+                { text: "Une directive pour le two-way data binding", isCorrect: true },
+                { text: "Un composant", isCorrect: false },
+                { text: "Une méthode", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce que Vuex?",
+            choices: [
+                { text: "Un gestionnaire d'état centralisé pour Vue", isCorrect: true },
+                { text: "Un framework CSS", isCorrect: false },
+                { text: "Un outil de build", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce qu'un computed property?",
+            choices: [
+                { text: "Une propriété calculée basée sur d'autres données", isCorrect: true },
+                { text: "Une méthode", isCorrect: false },
+                { text: "Un composant", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce qu'un watcher?",
+            choices: [
+                { text: "Une fonction qui observe les changements de données", isCorrect: true },
+                { text: "Un composant de surveillance", isCorrect: false },
+                { text: "Un service", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce que Vue Router?",
+            choices: [
+                { text: "Le système de routage officiel pour Vue", isCorrect: true },
+                { text: "Un serveur backend", isCorrect: false },
+                { text: "Un gestionnaire d'état", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce qu'un lifecycle hook?",
+            choices: [
+                { text: "Des méthodes appelées à différentes étapes du cycle de vie", isCorrect: true },
+                { text: "Un type de directive", isCorrect: false },
+                { text: "Un plugin", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce que v-if et v-show?",
+            choices: [
+                { text: "Des directives pour afficher/cacher des éléments", isCorrect: true },
+                { text: "Des méthodes", isCorrect: false },
+                { text: "Des composants", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce que Composition API?",
+            choices: [
+                { text: "Une nouvelle façon d'organiser la logique des composants", isCorrect: true },
+                { text: "Un framework CSS", isCorrect: false },
+                { text: "Un outil de build", isCorrect: false }
+            ]
+        }
+    ],
+    'sql': [
+        {
+            question: "Qu'est-ce que SQL?",
+            choices: [
+                { text: "Structured Query Language - langage pour bases de données", isCorrect: true },
+                { text: "Un framework web", isCorrect: false },
+                { text: "Un langage de programmation orienté objet", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce qu'une clé primaire (Primary Key)?",
+            choices: [
+                { text: "Un identifiant unique pour chaque ligne d'une table", isCorrect: true },
+                { text: "Un mot de passe", isCorrect: false },
+                { text: "Un index", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce qu'une jointure (JOIN)?",
+            choices: [
+                { text: "Une opération combinant des lignes de plusieurs tables", isCorrect: true },
+                { text: "Une fonction d'agrégation", isCorrect: false },
+                { text: "Un type de contrainte", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce qu'un index?",
+            choices: [
+                { text: "Une structure pour accélérer les recherches", isCorrect: true },
+                { text: "Un type de table", isCorrect: false },
+                { text: "Une contrainte", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce que GROUP BY?",
+            choices: [
+                { text: "Une clause pour regrouper des lignes", isCorrect: true },
+                { text: "Une fonction de tri", isCorrect: false },
+                { text: "Un type de jointure", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce qu'une transaction?",
+            choices: [
+                { text: "Un ensemble d'opérations traitées comme une unité", isCorrect: true },
+                { text: "Une requête SELECT", isCorrect: false },
+                { text: "Un type de table", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce que ACID?",
+            choices: [
+                { text: "Propriétés des transactions (Atomicité, Cohérence, Isolation, Durabilité)", isCorrect: true },
+                { text: "Un type de base de données", isCorrect: false },
+                { text: "Un langage de requête", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce qu'une clé étrangère (Foreign Key)?",
+            choices: [
+                { text: "Une colonne référençant la clé primaire d'une autre table", isCorrect: true },
+                { text: "Un index", isCorrect: false },
+                { text: "Une requête", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce que la normalisation?",
+            choices: [
+                { text: "L'organisation des données pour réduire la redondance", isCorrect: true },
+                { text: "L'optimisation des requêtes", isCorrect: false },
+                { text: "La création d'index", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce qu'une vue (VIEW)?",
+            choices: [
+                { text: "Une table virtuelle basée sur une requête", isCorrect: true },
+                { text: "Une fonction", isCorrect: false },
+                { text: "Un index", isCorrect: false }
+            ]
+        }
+    ],
+    'mongodb': [
+        {
+            question: "Qu'est-ce que MongoDB?",
+            choices: [
+                { text: "Une base de données NoSQL orientée documents", isCorrect: true },
+                { text: "Un framework web", isCorrect: false },
+                { text: "Un langage de programmation", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce qu'une collection en MongoDB?",
+            choices: [
+                { text: "Un groupe de documents, équivalent d'une table SQL", isCorrect: true },
+                { text: "Un type de requête", isCorrect: false },
+                { text: "Un index", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce qu'un document en MongoDB?",
+            choices: [
+                { text: "Un enregistrement au format BSON/JSON", isCorrect: true },
+                { text: "Un fichier texte", isCorrect: false },
+                { text: "Une table", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce que _id en MongoDB?",
+            choices: [
+                { text: "Un identifiant unique automatiquement créé", isCorrect: true },
+                { text: "Un type de données", isCorrect: false },
+                { text: "Une méthode", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce qu'une agrégation en MongoDB?",
+            choices: [
+                { text: "Un pipeline de traitement de données", isCorrect: true },
+                { text: "Une jointure", isCorrect: false },
+                { text: "Un index", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce que Mongoose?",
+            choices: [
+                { text: "Un ODM (Object Data Modeling) pour MongoDB et Node.js", isCorrect: true },
+                { text: "Un serveur MongoDB", isCorrect: false },
+                { text: "Un langage de requête", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce qu'un schema dans Mongoose?",
+            choices: [
+                { text: "Une structure définissant la forme des documents", isCorrect: true },
+                { text: "Une collection", isCorrect: false },
+                { text: "Une requête", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce que le sharding?",
+            choices: [
+                { text: "La distribution des données sur plusieurs machines", isCorrect: true },
+                { text: "Un type d'index", isCorrect: false },
+                { text: "Une méthode de backup", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce qu'une projection?",
+            choices: [
+                { text: "La sélection de champs spécifiques à retourner", isCorrect: true },
+                { text: "Un type de jointure", isCorrect: false },
+                { text: "Une collection", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce que find() vs findOne()?",
+            choices: [
+                { text: "find() retourne plusieurs documents, findOne() un seul", isCorrect: true },
+                { text: "Ils sont identiques", isCorrect: false },
+                { text: "find() est plus rapide", isCorrect: false }
+            ]
+        }
+    ],
+    'aws': [
+        {
+            question: "Qu'est-ce qu'AWS?",
+            choices: [
+                { text: "Amazon Web Services - plateforme cloud computing", isCorrect: true },
+                { text: "Un langage de programmation", isCorrect: false },
+                { text: "Un framework web", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce qu'EC2?",
+            choices: [
+                { text: "Elastic Compute Cloud - serveurs virtuels", isCorrect: true },
+                { text: "Un service de stockage", isCorrect: false },
+                { text: "Une base de données", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce que S3?",
+            choices: [
+                { text: "Simple Storage Service - stockage d'objets", isCorrect: true },
+                { text: "Un serveur de calcul", isCorrect: false },
+                { text: "Un réseau privé virtuel", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce que Lambda?",
+            choices: [
+                { text: "Un service de computing serverless", isCorrect: true },
+                { text: "Une base de données", isCorrect: false },
+                { text: "Un service de stockage", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce que RDS?",
+            choices: [
+                { text: "Relational Database Service - bases de données gérées", isCorrect: true },
+                { text: "Un service de calcul", isCorrect: false },
+                { text: "Un CDN", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce que CloudFront?",
+            choices: [
+                { text: "Un CDN (Content Delivery Network)", isCorrect: true },
+                { text: "Un service de base de données", isCorrect: false },
+                { text: "Un service de calcul", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce qu'IAM?",
+            choices: [
+                { text: "Identity and Access Management - gestion des accès", isCorrect: true },
+                { text: "Un service de stockage", isCorrect: false },
+                { text: "Un service de monitoring", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce que VPC?",
+            choices: [
+                { text: "Virtual Private Cloud - réseau virtuel isolé", isCorrect: true },
+                { text: "Un service de calcul", isCorrect: false },
+                { text: "Une base de données", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce que CloudWatch?",
+            choices: [
+                { text: "Un service de monitoring et logging", isCorrect: true },
+                { text: "Un service de stockage", isCorrect: false },
+                { text: "Un serveur web", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce que DynamoDB?",
+            choices: [
+                { text: "Une base de données NoSQL entièrement gérée", isCorrect: true },
+                { text: "Un service de calcul", isCorrect: false },
+                { text: "Un CDN", isCorrect: false }
+            ]
+        }
+    ],
+    'docker': [
+        {
+            question: "Qu'est-ce que Docker?",
+            choices: [
+                { text: "Une plateforme de conteneurisation", isCorrect: true },
+                { text: "Un système d'exploitation", isCorrect: false },
+                { text: "Un langage de programmation", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce qu'une image Docker?",
+            choices: [
+                { text: "Un modèle en lecture seule pour créer des conteneurs", isCorrect: true },
+                { text: "Un fichier de configuration", isCorrect: false },
+                { text: "Un conteneur en cours d'exécution", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce qu'un conteneur?",
+            choices: [
+                { text: "Une instance en cours d'exécution d'une image", isCorrect: true },
+                { text: "Un fichier de données", isCorrect: false },
+                { text: "Un réseau virtuel", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce qu'un Dockerfile?",
+            choices: [
+                { text: "Un fichier de recette pour construire une image", isCorrect: true },
+                { text: "Un fichier de logs", isCorrect: false },
+                { text: "Un fichier de configuration réseau", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce que Docker Hub?",
+            choices: [
+                { text: "Un registre public d'images Docker", isCorrect: true },
+                { text: "Un outil de monitoring", isCorrect: false },
+                { text: "Un orchestrateur", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce que docker-compose?",
+            choices: [
+                { text: "Un outil pour définir et gérer des applications multi-conteneurs", isCorrect: true },
+                { text: "Un éditeur de Dockerfile", isCorrect: false },
+                { text: "Un registre d'images", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce qu'un volume Docker?",
+            choices: [
+                { text: "Un mécanisme de persistance des données", isCorrect: true },
+                { text: "Un type de conteneur", isCorrect: false },
+                { text: "Un réseau", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce qu'un network Docker?",
+            choices: [
+                { text: "Un réseau virtuel pour la communication entre conteneurs", isCorrect: true },
+                { text: "Un stockage de données", isCorrect: false },
+                { text: "Une image", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce que EXPOSE dans un Dockerfile?",
+            choices: [
+                { text: "Une instruction documentant les ports utilisés", isCorrect: true },
+                { text: "Une commande qui démarre le conteneur", isCorrect: false },
+                { text: "Une variable d'environnement", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce que 'docker ps'?",
+            choices: [
+                { text: "Commande pour lister les conteneurs en cours d'exécution", isCorrect: true },
+                { text: "Commande pour créer une image", isCorrect: false },
+                { text: "Commande pour supprimer un conteneur", isCorrect: false }
+            ]
+        }
+    ],
+    'git': [
+        {
+            question: "Qu'est-ce que Git?",
+            choices: [
+                { text: "Un système de contrôle de version distribué", isCorrect: true },
+                { text: "Un service d'hébergement de code", isCorrect: false },
+                { text: "Un IDE", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce qu'un commit?",
+            choices: [
+                { text: "Un snapshot des changements dans le repository", isCorrect: true },
+                { text: "Une branche", isCorrect: false },
+                { text: "Un fichier de configuration", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce qu'une branche (branch)?",
+            choices: [
+                { text: "Une ligne de développement indépendante", isCorrect: true },
+                { text: "Un commit", isCorrect: false },
+                { text: "Un repository", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce qu'un merge?",
+            choices: [
+                { text: "La fusion de deux branches", isCorrect: true },
+                { text: "La suppression d'une branche", isCorrect: false },
+                { text: "La création d'un commit", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce qu'un repository?",
+            choices: [
+                { text: "Un espace de stockage du projet et son historique", isCorrect: true },
+                { text: "Un fichier de code", isCorrect: false },
+                { text: "Une commande Git", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce que 'git clone'?",
+            choices: [
+                { text: "Copier un repository distant localement", isCorrect: true },
+                { text: "Créer un nouveau fichier", isCorrect: false },
+                { text: "Fusionner des branches", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce que 'git pull'?",
+            choices: [
+                { text: "Récupérer et fusionner les changements du repository distant", isCorrect: true },
+                { text: "Envoyer les commits locaux", isCorrect: false },
+                { text: "Créer une branche", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce qu'un conflit de merge?",
+            choices: [
+                { text: "Quand Git ne peut pas fusionner automatiquement", isCorrect: true },
+                { text: "Une erreur de syntaxe", isCorrect: false },
+                { text: "Un fichier supprimé", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce que .gitignore?",
+            choices: [
+                { text: "Un fichier listant les fichiers à ignorer par Git", isCorrect: true },
+                { text: "Une commande Git", isCorrect: false },
+                { text: "Un type de branche", isCorrect: false }
+            ]
+        },
+        {
+            question: "Qu'est-ce qu'un remote?",
+            choices: [
+                { text: "Une version distante du repository", isCorrect: true },
+                { text: "Un commit", isCorrect: false },
+                { text: "Une branche locale", isCorrect: false }
+            ]
+        }
     ]
 };
 

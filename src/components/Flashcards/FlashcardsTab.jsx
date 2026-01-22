@@ -188,12 +188,9 @@ const FlashcardsTab = ({ skillId }) => {
                                     {mcq.choices.map((choice, i) => (
                                         <div
                                             key={choice.id}
-                                            className={`p-2 rounded ${choice.isCorrect
-                                                ? 'bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300'
-                                                : 'bg-slate-100 dark:bg-slate-700'
-                                                }`}
+                                            className="p-2 rounded bg-slate-100 dark:bg-slate-700"
                                         >
-                                            {choice.text} {choice.isCorrect && '✓'}
+                                            {choice.text}
                                         </div>
                                     ))}
                                 </div>

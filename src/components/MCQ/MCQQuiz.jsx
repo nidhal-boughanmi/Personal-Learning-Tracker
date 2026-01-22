@@ -13,13 +13,30 @@ const MCQQuiz = ({ skillId, onClose }) => {
 
     const skill = skills.find(s => s.id === skillId);
 
+    // Function to shuffle array
+    const shuffleArray = (array) => {
+        const shuffled = [...array];
+        for (let i = shuffled.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+        }
+        return shuffled;
+    };
+
     const startQuiz = () => {
         const quizQuestions = getRandomQuizQuestions(skillId, 10);
         if (quizQuestions.length === 0) {
             alert('Vous devez créer au moins une question MCQ pour ce skill!');
             return;
         }
-        setQuestions(quizQuestions);
+
+        // Shuffle choices for each question
+        const questionsWithShuffledChoices = quizQuestions.map(q => ({
+            ...q,
+            choices: shuffleArray(q.choices)
+        }));
+
+        setQuestions(questionsWithShuffledChoices);
         setQuizStarted(true);
         setCurrentQuestion(0);
         setSelectedAnswers({});
@@ -144,10 +161,10 @@ const MCQQuiz = ({ skillId, onClose }) => {
                                                     <div
                                                         key={choice.id}
                                                         className={`p-3 rounded-lg border-2 ${isCorrectChoice
-                                                                ? 'border-accent-500 bg-accent-100 dark:bg-accent-900/30'
-                                                                : isSelected
-                                                                    ? 'border-red-500 bg-red-100 dark:bg-red-900/30'
-                                                                    : 'border-slate-200 dark:border-slate-700'
+                                                            ? 'border-accent-500 bg-accent-100 dark:bg-accent-900/30'
+                                                            : isSelected
+                                                                ? 'border-red-500 bg-red-100 dark:bg-red-900/30'
+                                                                : 'border-slate-200 dark:border-slate-700'
                                                             }`}
                                                     >
                                                         <div className="flex items-center justify-between">
@@ -205,8 +222,8 @@ const MCQQuiz = ({ skillId, onClose }) => {
                             <label
                                 key={choice.id}
                                 className={`flex items-center gap-3 p-4 rounded-lg border-2 cursor-pointer transition-all ${isSelected
-                                        ? 'border-primary-500 bg-primary-100 dark:bg-primary-900/30'
-                                        : 'border-slate-200 dark:border-slate-700 hover:border-primary-300'
+                                    ? 'border-primary-500 bg-primary-100 dark:bg-primary-900/30'
+                                    : 'border-slate-200 dark:border-slate-700 hover:border-primary-300'
                                     }`}
                             >
                                 <input
