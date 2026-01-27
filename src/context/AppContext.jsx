@@ -21,6 +21,8 @@ export const AppProvider = ({ children }) => {
     const [notes, setNotes] = useState([]);
     const [flashcards, setFlashcards] = useState([]);
     const [mcqs, setMcqs] = useState([]);
+    const [cvData, setCVData] = useState(null);
+    const [recommendations, setRecommendations] = useState([]);
     const [loading, setLoading] = useState(true);
 
     // Load data from localStorage on mount
@@ -34,10 +36,31 @@ export const AppProvider = ({ children }) => {
             setNotes(storage.getNotes());
             setFlashcards(storage.getFlashcards());
             setMcqs(storage.getMCQs());
+            setCVData(storage.getCVData());
+            setRecommendations(storage.getRecommendations());
             setLoading(false);
         };
         loadData();
     }, []);
+
+    // Auto-save CV data
+    useEffect(() => {
+        if (!loading) {
+            if (cvData) {
+                storage.saveCVData(cvData);
+            } else {
+                storage.clearCVData();
+            }
+        }
+    }, [cvData, loading]);
+
+    // Auto-save recommendations
+    useEffect(() => {
+        if (!loading) {
+            storage.saveRecommendations(recommendations);
+        }
+    }, [recommendations, loading]);
+
 
     // Skills operations
     const addSkill = (name, targetProgress = 100) => {
@@ -352,6 +375,10 @@ export const AppProvider = ({ children }) => {
         deleteMCQ,
         getMCQsBySkill,
         getRandomQuizQuestions,
+        cvData,
+        setCVData,
+        recommendations,
+        setRecommendations,
     };
 
     return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

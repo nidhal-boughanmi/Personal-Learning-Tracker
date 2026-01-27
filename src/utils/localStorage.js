@@ -9,6 +9,8 @@ const STORAGE_KEYS = {
     NOTES: 'devskilltracker_notes',
     FLASHCARDS: 'devskilltracker_flashcards',
     MCQS: 'devskilltracker_mcqs',
+    CV_DATA: 'devskilltracker_cv_data',
+    RECOMMENDATIONS: 'devskilltracker_recommendations',
 };
 
 // Generic storage functions
@@ -283,6 +285,21 @@ export const getMCQsBySkillId = (skillId) => {
     const mcqs = getMCQs();
     return mcqs.filter(m => m.skillId === skillId);
 };
+
+// CV Data
+export const getCVData = () => getItem(STORAGE_KEYS.CV_DATA, null);
+
+export const saveCVData = (cvData) => setItem(STORAGE_KEYS.CV_DATA, cvData);
+
+export const clearCVData = () => {
+    localStorage.removeItem(STORAGE_KEYS.CV_DATA);
+    localStorage.removeItem(STORAGE_KEYS.RECOMMENDATIONS);
+};
+
+// Recommendations
+export const getRecommendations = () => getItem(STORAGE_KEYS.RECOMMENDATIONS, []);
+
+export const saveRecommendations = (recommendations) => setItem(STORAGE_KEYS.RECOMMENDATIONS, recommendations);
 
 
 

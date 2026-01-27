@@ -6,12 +6,15 @@ import Statistics from './components/Statistics/Statistics';
 import DailyGoals from './components/DailyGoals/DailyGoals';
 import Settings from './components/Settings/Settings';
 import FlashcardQuiz from './components/Flashcards/FlashcardQuiz';
+import RecommendationsPage from './components/Recommendations/RecommendationsPage';
 import { FiBook, FiClock, FiBarChart2, FiTarget, FiSettings, FiZap } from 'react-icons/fi';
+import { HiSparkles } from 'react-icons/hi';
 
 const TABS = {
   DASHBOARD: 'dashboard',
   TIMER: 'timer',
   QUIZ: 'quiz',
+  RECOMMENDATIONS: 'recommendations',
   STATISTICS: 'statistics',
   GOALS: 'goals',
   SETTINGS: 'settings',
@@ -25,6 +28,7 @@ function App() {
     { id: TABS.DASHBOARD, label: 'Dashboard', icon: FiBook },
     { id: TABS.TIMER, label: 'Timer', icon: FiClock },
     { id: TABS.QUIZ, label: 'Quiz', icon: FiZap },
+    { id: TABS.RECOMMENDATIONS, label: 'Recommendations', icon: HiSparkles },
     { id: TABS.STATISTICS, label: 'Statistics', icon: FiBarChart2 },
     { id: TABS.GOALS, label: 'Goals', icon: FiTarget },
     { id: TABS.SETTINGS, label: 'Settings', icon: FiSettings },
@@ -43,6 +47,8 @@ function App() {
         return <StudyTimer />;
       case TABS.QUIZ:
         return <FlashcardQuiz skillId={quizSkillId} />;
+      case TABS.RECOMMENDATIONS:
+        return <RecommendationsPage />;
       case TABS.STATISTICS:
         return <Statistics />;
       case TABS.GOALS:
