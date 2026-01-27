@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useApp } from '../../context/AppContext';
 import { useTimer } from '../../hooks/useTimer';
 import DailyTimeCounter from './DailyTimeCounter';
+import LofiMusicPlayer from './LofiMusicPlayer';
 import { formatTimerDisplay } from '../../utils/helpers';
 import { FiPlay, FiPause, FiRotateCcw, FiSkipForward, FiCoffee } from 'react-icons/fi';
 import { HiFire } from 'react-icons/hi';
@@ -83,8 +84,8 @@ const StudyTimer = () => {
                     <button
                         onClick={() => switchMode(TIMER_MODES.WORK)}
                         className={`flex-1 px-4 py-2 rounded-xl font-medium transition-all ${mode === TIMER_MODES.WORK
-                                ? 'bg-gradient-to-r from-primary-600 to-accent-600 text-white shadow-lg'
-                                : 'bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300'
+                            ? 'bg-gradient-to-r from-primary-600 to-accent-600 text-white shadow-lg'
+                            : 'bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300'
                             }`}
                     >
                         Work
@@ -92,8 +93,8 @@ const StudyTimer = () => {
                     <button
                         onClick={() => switchMode(TIMER_MODES.SHORT_BREAK)}
                         className={`flex-1 px-4 py-2 rounded-xl font-medium transition-all ${mode === TIMER_MODES.SHORT_BREAK
-                                ? 'bg-gradient-to-r from-emerald-500 to-teal-500 text-white shadow-lg'
-                                : 'bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300'
+                            ? 'bg-gradient-to-r from-emerald-500 to-teal-500 text-white shadow-lg'
+                            : 'bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300'
                             }`}
                     >
                         Short Break
@@ -101,8 +102,8 @@ const StudyTimer = () => {
                     <button
                         onClick={() => switchMode(TIMER_MODES.LONG_BREAK)}
                         className={`flex-1 px-4 py-2 rounded-xl font-medium transition-all ${mode === TIMER_MODES.LONG_BREAK
-                                ? 'bg-gradient-to-r from-emerald-500 to-teal-500 text-white shadow-lg'
-                                : 'bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300'
+                            ? 'bg-gradient-to-r from-emerald-500 to-teal-500 text-white shadow-lg'
+                            : 'bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300'
                             }`}
                     >
                         Long Break
@@ -214,6 +215,9 @@ const StudyTimer = () => {
                     </button>
                 </div>
             </div>
+
+            {/* Lofi Music Player */}
+            <LofiMusicPlayer isStudyActive={isActive && mode === TIMER_MODES.WORK} />
         </div>
     );
 };
