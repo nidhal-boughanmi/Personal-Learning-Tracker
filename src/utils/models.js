@@ -82,13 +82,13 @@ export const RESOURCE_STATUS = {
     PAUSED: 'paused',
 };
 
-export const createResource = (skillId, type, title, total = 0) => ({
+export const createResource = (skillId, type, title, total = 0, enrichedData = {}) => ({
     id: Date.now().toString() + Math.random().toString(36).substr(2, 9),
     skillId,
     type,
     title: title.trim(),
-    url: '',
-    platform: '',
+    url: enrichedData.url || '',
+    platform: enrichedData.platform || '',
     progress: {
         current: 0,
         total,
@@ -98,6 +98,16 @@ export const createResource = (skillId, type, title, total = 0) => ({
     rating: 0,
     notes: '',
     tags: [],
+
+    // Enriched fields
+    thumbnail: enrichedData.thumbnail || null,        // URL or base64 of thumbnail/preview image
+    youtubeId: enrichedData.youtubeId || null,       // YouTube video ID (null for non-YouTube)
+    description: enrichedData.description || '',       // Resource description/summary
+    author: enrichedData.author || '',           // Author name (for articles/books)
+    duration: enrichedData.duration || null,       // Video duration in minutes (optional)
+    fileData: enrichedData.fileData || null,       // Base64 encoded file data (for uploaded PDFs)
+    fileSize: enrichedData.fileSize || 0,          // File size in bytes
+
     startedAt: null,
     completedAt: null,
     createdAt: new Date().toISOString(),

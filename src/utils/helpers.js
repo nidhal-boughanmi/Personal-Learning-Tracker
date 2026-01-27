@@ -119,3 +119,51 @@ export const showNotification = (title, options = {}) => {
         });
     }
 };
+
+// Validate if string is a valid URL
+export const isValidURL = (string) => {
+    try {
+        new URL(string);
+        return true;
+    } catch (_) {
+        return false;
+    }
+};
+
+// Extract domain from URL
+export const getDomainFromURL = (url) => {
+    try {
+        const urlObj = new URL(url);
+        return urlObj.hostname.replace('www.', '');
+    } catch (_) {
+        return '';
+    }
+};
+
+// Get file extension from URL or filename
+export const getFileExtension = (url) => {
+    try {
+        const pathname = new URL(url).pathname;
+        const extension = pathname.split('.').pop();
+        return extension.toLowerCase();
+    } catch (_) {
+        // If not a valid URL, try as filename
+        const parts = url.split('.');
+        return parts.length > 1 ? parts.pop().toLowerCase() : '';
+    }
+};
+
+// Check if URL points to a PDF
+export const isPDFUrl = (url) => {
+    return getFileExtension(url) === 'pdf';
+};
+
+// Format file size in bytes to human readable
+export const formatFileSize = (bytes) => {
+    if (bytes === 0) return '0 Bytes';
+    const k = 1024;
+    const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+    const i = Math.floor(Math.log(bytes) / Math.log(k));
+    return Math.round(bytes / Math.pow(k, i) * 100) / 100 + ' ' + sizes[i];
+};
+

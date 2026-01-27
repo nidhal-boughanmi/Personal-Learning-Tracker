@@ -155,8 +155,8 @@ export const AppProvider = ({ children }) => {
     };
 
     // Resource operations
-    const addResource = (skillId, type, title, total = 0) => {
-        const newResource = createResource(skillId, type, title, total);
+    const addResource = (skillId, type, title, total = 0, enrichedData = {}) => {
+        const newResource = createResource(skillId, type, title, total, enrichedData);
         const updatedResources = [...resources, newResource];
         setResources(updatedResources);
         storage.saveResources(updatedResources);

@@ -122,6 +122,65 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+
+  /* Resource card utilities */
+  .aspect-video {
+    aspect-ratio: 16 / 9;
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Hover lift effect */
+  .hover\:-translate-y-1:hover {
+    transform: translateY(-0.25rem);
+  }
+
+  /* Fade in animation */
+  .animate-in {
+    animation: fadeIn 0.3s ease-in;
+  }
+
+  .fade-in {
+    animation: fadeIn 0.2s ease-in;
+  }
+
+  .zoom-in {
+    animation: zoomIn 0.2s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes zoomIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
 }
 
 /* Custom scrollbar */
